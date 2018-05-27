@@ -1,0 +1,121 @@
+KNK-TTPC
+Kerckhoff-Nebel-Karhan
+Kerckhoff-Nebel-Karhan-Twin-Transpostion-Polybios-Cube
+
+"0123 Concept Cipher"
+
+
+Main Idea:
+	Build an encryption system that fulfulls all of Kerckhoff's principle*s, but is not the Miller-Vernam-Mauborgne "One Time Pad" aka. "individual Worm".
+
+		Those are:
+		-	Basic indecipherability
+		-	The cryptosystem does not require secrecy of it's functionality
+			-	only key secrecy
+		-	Easy transferability of the system with easy to memorize keys
+		-	Compactibility with telegraphy [or electronic transmission]
+		-	Portability and easy to use
+		-	Easy application of they system
+	Bonus:
+		-	Fulfills Fano-Condition
+
+
+Polybios-Cube:
+Firstly, all encodeable signs are encoded using a S-Box, which is basically a "Polybios-Cube", where every sign get's z/x/y positioning.
+
+EXAMPLE:
+
+0 0 1 2 3   1 0 1 2 3
+ ╔═╤═╤═╤═╗   ╔═╤═╤═╤═╗
+0║0│G│I│²║  0║|│\│.│F║
+ ╟─┼─┼─┼─╢   ╟─┼─┼─┼─╢
+1║H│1│K│>║  1║_│§│E│?║
+ ╟─┼─┼─┼─╢   ╟─┼─┼─┼─╢
+2║J│L│2│M║  2║P│D│7│/║
+ ╟─┼─┼─┼─╢   ╟─┼─┼─┼─╢
+3║€│@│N│3║  3║8│R│-│$║
+ ╚═╧═╧═╧═╝   ╚═╧═╧═╧═╝
+
+2 0 1 2 3   3 0 1 2 3 
+ ╔═╤═╤═╤═╗   ╔═╤═╤═╤═╗
+0║³│#│O│9║  0║4│T│(│}║
+ ╟─┼─┼─┼─╢   ╟─┼─┼─┼─╢
+1║*│Y│C│Q║  1║S│5│V│[║
+ ╟─┼─┼─┼─╢   ╟─┼─┼─┼─╢
+2║!│B│+│%║  2║]│U│6│X║
+ ╟─┼─┼─┼─╢   ╟─┼─┼─┼─╢
+3║A│"│°│<║  3║{│)│W│Z║
+ ╚═╧═╧═╧═╝   ╚═╧═╧═╧═╝
+
+ S   A   M   P   L   E   -   T   E   X   T
+301 203 032 102 012 121 123 310 121 332 310
+
+
+1st Transposition:
+Using either Base16hex, Base32hex or Base64hex, Code is scambled by switching Lines & Collumns.
+Resorting in forward order
+
+ P 4 S 5 W 0 R D
+----------------
+ 3 0 1 2 0 3 0 3
+ 2 1 0 2 0 1 2 1
+ 2 1 1 2 3 3 1 0
+ 1 2 1 3 3 2 3 1
+ 0
+
+ 0 4 5 D P R S W
+----------------
+ 3 0 2 3 3 0 1 0
+ 1 1 2 1 2 2 0 0
+ 3 1 2 0 2 1 1 3
+ 2 2 3 1 1 3 1 3
+         0
+
+Result:
+3132 0112 2223 3102 32210 0213 1011 0033
+
+313 201 122 223 310 232 210 021 310 110 033
+
+
+2nd Transposition:
+Using either Base16hex, Base32hex or Base64hex, Code is scambled by switching Lines & Collumns.
+Resorting in reverse order
+
+ S 3 C R E T
+------------
+ 3 1 3 2 0 1
+ 1 2 2 2 2 3
+ 3 1 0 2 3 2
+ 2 1 0 0 2 1
+ 3 1 0 1 1 0
+ 0 3 3
+
+ T S R E C 3
+------------
+ 1 3 2 0 3 1
+ 3 1 2 2 2 2
+ 2 3 2 3 0 1
+ 1 2 0 2 0 1
+ 0 3 1 1 0 1
+   0     3 3
+
+Result:
+13210 313230 22201 02321 320003 121113
+
+132 103 132 302 220 102 321 320 003 121 113
+
+ /   8   /   ]   O   P   V   (   €   E   R
+
+
+
+
+Security Assesment:
+
+Like it's basic ciper precessors, Polybios, ADFGX and ADFGVX, tihs cipher has to be considered unsafe and obsolete even before this document was designed.
+
+It has several severe attack vectors - beside a potentially unsafe Polybios-Cube S-Box, it's lack of keysize and use of a regular alphabet - including insecure passphrases - makes it weak for linguistic-based attacks using a known ciphertext/plaintext combinations using the same passphrases and S-Box.
+
+So unless it's meant as a clandestine communication cipher, and the opposite is totally stupid and does not even have half-decent mathematicians, cryptographers and/or linguisticians  it won't work sufficently and will stay secret.
+
+It may only have niece use cases, such as encrypting human-readable One-Time-Pads or communicating which key to use for encryption/decryption.
+
