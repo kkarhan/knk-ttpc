@@ -29,7 +29,7 @@ EXAMPLE:
  ╔═╤═╤═╤═╗   ╔═╤═╤═╤═╗
 0║0│G│I│²║  0║|│\│.│F║
  ╟─┼─┼─┼─╢   ╟─┼─┼─┼─╢
-1║H│1│K│>║  1║_│§│E│?║
+1║H│1│K│>║  1║_│§│E│?║https://en.wikipedia.org/wiki/S-box
  ╟─┼─┼─┼─╢   ╟─┼─┼─┼─╢
 2║J│L│2│M║  2║P│D│7│/║
  ╟─┼─┼─┼─╢   ╟─┼─┼─┼─╢
@@ -46,6 +46,41 @@ EXAMPLE:
  ╟─┼─┼─┼─╢   ╟─┼─┼─┼─╢
 3║A│"│°│<║  3║{│)│W│Z║
  ╚═╧═╧═╧═╝   ╚═╧═╧═╧═╝
+ 
+Note:
+	For this sample, a 4³ Polybios Cube was used to encode symbols, but in theory, that cube could be of any size to accomodate the desired amount of symbols.
+	Just a short overview of possibilities using a cube.
+	Cube Size [Fields per Dimension]	Fields [potence]	Number of Symbols encodeable
+	X					X³			=(X³)
+	...					...			...
+	3					3³			27
+	4					4³			64
+	5					5³			125
+	6					6³			216
+	7					7³			343
+	8					8³			512
+	9					9³			729
+	10					10³			1000
+	...					...			...
+	16					16³			4096
+	32					32³			32768
+	64					63³			262144
+	128					128³			2097152
+	256					256³			16777216
+	512					512³			134217728
+	1024					1024³			1073741824
+	...					...			....
+	
+
+	This sample also does not use a cryptographically randomized "Polybios Cube", making it weaker than even the NSA-backdoored S-Boxes of DES
+		https://en.wikipedia.org/wiki/Data_Encryption_Standard
+		https://en.wikipedia.org/wiki/S-box
+ 
+ 	Also using just two dimensions ["Polybios-Square"] or four ["Polybios-Spacetime"] or even more more dimensions would be possible, but would exceed the scope of this concept.
+	
+	Therefore I stuck with 3 dimensions and 4 fields per dimension.
+
+
 
  S   A   M   P   L   E   -   T   E   X   T
 301 203 032 102 012 121 123 310 121 332 310
